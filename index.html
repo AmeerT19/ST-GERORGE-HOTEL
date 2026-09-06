@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#111212" />
+  <title>ST GEORGE HOTEL JERUSALEM</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .language-select { appearance: none; border: 1px solid #80683f; border-radius: 6px; padding: 8px 27px 8px 10px; color: #f7d69e; background: #1a1a19 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ddb16b' stroke-width='1.5'/%3E%3C/svg%3E") no-repeat right 9px center; font: 11px 'DM Sans', sans-serif; cursor: pointer; }
+    .language-select option { background: #1a1a19; }
+    .quick-actions i { font-style: normal; }
+    .brand-logo { width: 48px; height: 48px; object-fit: contain; }
+    .quick-actions svg { display: block; width: 25px; height: 25px; margin: 0 auto 1px; fill: #ddb16b; }
+    .contact .facebook-link { display: flex; align-items: center; gap: 7px; }
+    .contact .phone-link { display: flex; align-items: center; gap: 7px; }
+    .contact-icon { color: #ddb16b; font-size: 17px; line-height: 1; flex: 0 0 auto; }
+    .phone-number { direction: ltr; unicode-bidi: isolate; }
+    .hero { background-image: linear-gradient(0deg, rgba(8,9,9,.9), rgba(8,9,9,.2)), url('hotel-exterior.png'); }
+    .guest-info { margin: 0 0 22px; padding: 15px; border: 1px solid #4e4435; border-radius: 12px; background: linear-gradient(145deg, #20201e, #171817); }
+    .reception-note { margin: 0 0 14px; padding: 10px 12px; border-left: 2px solid #ddb16b; background: #151615; color: #e8dfd1; font-size: 13px; }
+    .reception-note strong { color: #f7d69e; font-size: 18px; }
+    .info-grid { display: grid; gap: 7px; }
+    .info-item, .floor-grid span { display: flex; justify-content: space-between; gap: 10px; color: #eee4d5; font-size: 12px; }
+    .info-item span, .floor-grid b { color: #ddb16b; font-weight: 500; }
+    .info-item b { font-weight: 500; text-align: right; }
+    .floor-title { margin: 16px 0 8px; color: #f7d69e; font: 600 17px 'Cormorant Garamond', serif; letter-spacing: .5px; text-transform: uppercase; }
+    .floor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .floor-grid span { display: grid; gap: 2px; padding: 9px; background: #151615; border-radius: 6px; }
+    /* Refined St George palette: midnight navy, antique gold, warm ivory */
+    :root { --ink: #121923; --paper: #F4EFE6; --gold: #C5A15E; --pale: #E5C98D; --muted: #D7D0C4; }
+    body { background: #17140F; color: #F4EFE6; }
+    .card-shell { background: #121923; }
+    .topbar { background: #101720; border-bottom: 1px solid rgba(197,161,94,.32); }
+    .brand { color: #E5C98D; }
+    .brand-logo { filter: drop-shadow(0 2px 3px rgba(0,0,0,.55)); }
+    .language-select { border-color: #C5A15E; color: #F4EFE6; background-color: #1B2735; }
+    .language-select option { background: #121923; }
+    .hero { background-color: #121923; background-image: linear-gradient(0deg, rgba(10,16,25,.94), rgba(10,16,25,.25)), url('hotel-exterior.png'); }
+    .hero h1 { color: #F9F4EB; }
+    .hero h1 em, .hero-subtitle, .eyebrow, .section-kicker, .floor-title { color: #E5C98D; }
+    .tagline, .about-grid p { color: #E8E0D3; }
+    .quick-actions a { background: rgba(20,30,42,.91); border-color: rgba(229,201,141,.26); color: #F4EFE6; }
+    .quick-actions span, .quick-actions svg { color: #E5C98D; fill: #E5C98D; }
+    .about img { border-color: #C5A15E; box-shadow: 0 8px 18px rgba(0,0,0,.28); }
+    .guest-info { border-color: rgba(197,161,94,.42); background: linear-gradient(145deg, #1E2A38, #121923); box-shadow: inset 0 1px rgba(255,255,255,.03); }
+    .reception-note, .floor-grid span { background: #111A25; }
+    .reception-note { border-left-color: #C5A15E; color: #E8E0D3; }
+    .reception-note strong { color: #E5C98D; }
+    .info-item, .floor-grid span, .contact>a { color: #F4EFE6; }
+    .info-item span, .floor-grid b, .contact-icon, .contact>a::first-letter { color: #E5C98D; }
+    footer { border-top-color: rgba(197,161,94,.27); color: #C8C1B7; }
+    @media (min-width: 650px) { body { background: radial-gradient(circle at 50% 0, #3B4653, #17140F 70%); } }
+  </style>
+</head>
+<body>
+  <main class="card-shell">
+    <nav class="topbar" aria-label="Primary navigation">
+      <a href="#top" class="brand"><img class="brand-logo" src="st-george-logo-transparent.png" alt="ST GEORGE HOTEL logo"><span><b>ST GEORGE HOTEL</b><small>JERUSALEM</small></span></a>
+      <select class="language-select" id="languageSelect" aria-label="Select language">
+        <option value="en">English</option><option value="ar">العربية</option><option value="he">עברית</option><option value="tr">Türkçe</option><option value="es">Español</option>
+      </select>
+    </nav>
+
+    <header id="top" class="hero">
+      <div class="hero-content">
+        <p class="eyebrow" data-i18n="eyebrow">A timeless stay in the Holy City</p>
+        <h1>ST GEORGE<br><em>HOTEL</em></h1>
+        <p class="hero-subtitle">Jerusalem</p>
+        <p class="tagline" data-i18n="tagline">The Passion of<br>Jerusalemite Hospitality</p>
+      </div>
+      <div class="quick-actions">
+        <a href="tel:+97226277232"><span>☎</span><i data-i18n="call">Call us</i></a>
+        <a href="https://wa.me/97226277232" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3a13 13 0 0 0-11.1 19.8L3 29l6.4-1.7A13 13 0 1 0 16 3Zm0 23.7c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.7 1 1-3.6-.2-.4A10.7 10.7 0 1 1 16 26.7Zm5.9-8c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2s-.8 1-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-2.3-3.8-3.7-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6l-1-2.3c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 3 0 1.7 1.3 3.4 1.4 3.7.2.2 2.5 3.8 6 5.3.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.5Z"/></svg>WhatsApp</a>
+        <a href="https://maps.google.com/?q=6+Amr+Ibn+Al-As+St,+Jerusalem" target="_blank" rel="noopener"><span>●</span><i data-i18n="location">Location</i></a>
+      </div>
+    </header>
+
+    <section id="about" class="section about">
+      <p class="section-kicker" data-i18n="aboutTitle">About us</p>
+      <div class="about-grid"><p data-i18n="aboutText">The essence of Jerusalem’s warm hospitality, ST GEORGE HOTEL stands as the city’s cherished landmark, committed to providing an unparalleled and heartfelt guest experience.</p><img src="rooftop-pool.png" alt="ST GEORGE HOTEL rooftop pool"></div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <p class="section-kicker" data-i18n="contactTitle">Contact us</p>
+      <div class="guest-info">
+        <p class="reception-note" data-i18n="reception">For Reception, dial <strong>0</strong> from your room phone.</p>
+        <div class="info-grid">
+          <div class="info-item"><span data-i18n="breakfast">Breakfast</span><b>6:30 AM – 9:00 AM</b></div>
+          <div class="info-item"><span data-i18n="dinner">Dinner</span><b>6:30 PM – 9:00 PM</b></div>
+          <div class="info-item"><span data-i18n="pool">Pool hours</span><b>8:00 AM – 6:00 PM</b></div>
+        </div>
+        <p class="floor-title" data-i18n="floors">Room floors</p>
+        <div class="floor-grid">
+          <span><b data-i18n="floor1">1st Floor</b>101 – 133</span><span><b data-i18n="floor2">2nd Floor</b>201 – 233</span>
+          <span><b data-i18n="floor3">3rd Floor</b>301 – 333</span><span><b data-i18n="floor4">4th Floor</b>401 – 433</span>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=6+Amr+Ibn+Al-As+St,+Jerusalem" target="_blank" rel="noopener">● &nbsp;6 Amr Ibn Al-As St, Jerusalem</a>
+      <a class="phone-link" href="tel:+97226277232"><span class="contact-icon">☎</span><span class="phone-number">+972 2 627 7232</span></a>
+      <a class="facebook-link" href="https://www.facebook.com/StGeorgeHotelJerusalem" target="_blank" rel="noopener"><span class="contact-icon">ⓕ</span><span>ST GEORGE HOTEL JERUSALEM</span></a>
+      <a href="mailto:info@stgeorgehoteljerusalem.com">✉ &nbsp;info@stgeorgehoteljerusalem.com</a>
+    </section>
+    <footer>© <span id="year"></span> ST GEORGE HOTEL JERUSALEM. All rights reserved.</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
